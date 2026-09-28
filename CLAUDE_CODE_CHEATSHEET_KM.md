@@ -56,7 +56,8 @@
 
 ```text
 my-project/
-├── CLAUDE.md                 # ច្បាប់ណែនាំប្រចាំគម្រោង (ផ្ទុកឡើងរាល់ Session)
+├── CLAUDE.md                 # ច្បាប់ណែនាំប្រតិបត្តិការគម្រោង (ផ្ទុកឡើងរាល់ Session)
+├── DESIGN.md                 # កិច្ចសន្យាប្រព័ន្ធរចនា UI & Design Tokens
 └── .claude/                  # ការកំណត់រចនាសម្ព័ន្ធកម្រិតគម្រោង
     ├── settings.json         # កំណត់សិទ្ធិ, Hooks, និង Settings គម្រោង
     ├── rules/                # ច្បាប់បំបែកតាម Folder (*.md)
@@ -89,7 +90,7 @@ my-project/
 ## ស្តង់ដារសរសេរកូដ
 - ប្រើប្រាស់ TypeScript Strict Mode។
 - ប្រើ Functional Components សម្រាប់ React UI។
-- រាល់ការកែប្រែ Database ត្រូវប្រើប្រាស់ Transaction។
+- អនុវត្តតាម `@DESIGN.md` សម្រាប់រាល់ការរចនា UI/UX។
 ```
 
 ### ខ. គំរូ `.claude/settings.json` (សិទ្ធិ + Hooks + MCP)
@@ -143,3 +144,36 @@ disable-model-invocation: true
    - 🟡 ការព្រមាន (Warning)
    - 🟢 យោបល់កែលម្អ (Suggestion)
 ```
+
+### ឃ. គំរូកិច្ចសន្យារចនា `DESIGN.md` (Design System Contract)
+```markdown
+# កិច្ចសន្យាប្រព័ន្ធរចនា (DESIGN.md)
+
+## រចនាបថ និង Tokens
+- **ទម្រង់**: Modern Kinetic Minimalism
+- **ក្ដារពណ៌**: Canvas `#FAF9F5` (Dark: `#141413`), Primary `#D97757`, Subtle `#E8E6DC`
+- **ពុម្ពអក្សរ**: Headings: `Poppins`, Body: `Inter`, Mono: `JetBrains Mono`
+- **ក្រឡាចត្រង្គ**: អនុវត្តតាមខ្នាត 4pt/8pt យ៉ាងតឹងរ៉ឹង (`4px`, `8px`, `16px`, `24px`, `32px`, `48px`)
+- **បម្រាម**: ហាមដាច់ខាតមិនឱ្យប្រើ Pixel តាមចិត្ត; ត្រូវគាំទ្រ Light/Dark Modes និង WCAG AA Contrast។
+```
+
+---
+
+## ៦. តារាងពាក្យបញ្ជារហ័សសម្រាប់ Plugins សំខាន់ៗ
+
+### ក. Superpowers (`superpowers`)
+- **ដំឡើង**: `claude plugin install superpowers@claude-plugins-official`
+- **ពាក្យបញ្ជាស្នូល**:
+  - `/superpowers:brainstorm` - សួរបំភ្លឺតម្រូវការ និងស្ថាបត្យកម្មប្រព័ន្ធបែប Socratic។
+  - `/superpowers:write-plan` - បង្កើតផែនការកិច្ចការតូចៗកម្រិតអាតូមិក (២-៥ នាទី)។
+  - `/superpowers:test-driven` - អនុវត្តវដ្ត TDD (Red-Green-Refactor) យ៉ាងតឹងរ៉ឹង។
+  - `/superpowers:debug-systematic` - ដោះស្រាយ Bug តាមប្រព័ន្ធ ៤ ដំណាក់កាល។
+  - `/superpowers:review` - ត្រួតពិនិត្យកូដ និងវាយតម្លៃកម្រិតធ្ងន់ធ្ងរនៃបញ្ហា។
+  - `/superpowers:help` - បង្ហាញជំនាញ និងពាក្យបញ្ជាទាំងអស់។
+- **ឯកសារពេញលេញ**: [SUPERPOWERS_PLUGIN_KM.md](./SUPERPOWERS_PLUGIN_KM.md)
+
+### ខ. Frontend Design (`frontend-design`)
+- **ដំឡើង**: `claude plugin install frontend-design@claude-plugins-official`
+- **សមត្ថភាព**: បង្កើតកូដ UI/UX លំដាប់ Production ស្រស់ស្អាត ប្លែកភ្នែក មិនដដែលៗ ព្រមទាំងគាំទ្រ Tailwind CSS, React, Vue, Svelte។
+- **ឯកសារពេញលេញ**: [FRONTEND_DESIGN_PLUGIN_KM.md](./FRONTEND_DESIGN_PLUGIN_KM.md)
+

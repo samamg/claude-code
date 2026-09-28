@@ -56,7 +56,8 @@ A rapid-lookup reference guide for commands, flags, keyboard shortcuts, settings
 
 ```text
 my-project/
-├── CLAUDE.md                 # Primary project instructions (always loaded)
+├── CLAUDE.md                 # Primary project instructions (operational rules)
+├── DESIGN.md                 # Visual design system contract & tokens
 └── .claude/                  # Project-level configuration
     ├── settings.json         # Permissions, hooks, and project settings
     ├── rules/                # Scoped rules (*.md) with path filters
@@ -89,7 +90,7 @@ my-project/
 ## Conventions
 - Use TypeScript strict mode.
 - Prefer functional components and hooks for UI.
-- All database operations must be wrapped in transactions where appropriate.
+- Follow `@DESIGN.md` for all UI/UX styling.
 ```
 
 ### B. `.claude/settings.json` (Permissions + Hooks + MCP)
@@ -143,3 +144,37 @@ disable-model-invocation: true
    - 🟡 Warning
    - 🟢 Suggestion
 ```
+
+### D. Starter `DESIGN.md` Template (Design System Contract)
+```markdown
+# Visual Design Contract (DESIGN.md)
+
+## Aesthetic & Tokens
+- **Vibe**: Modern Kinetic Minimalism
+- **Colors**: Canvas `#FAF9F5` (Dark: `#141413`), Primary `#D97757`, Subtle `#E8E6DC`
+- **Typography**: Headings: `Poppins`, Body: `Inter`, Mono: `JetBrains Mono`
+- **Grid**: Strict 4pt/8pt scale (`4px`, `8px`, `16px`, `24px`, `32px`, `48px`)
+- **Constraints**: No arbitrary pixel values; always support light/dark modes; ensure WCAG AA contrast.
+```
+
+
+---
+
+## 6. Popular Plugins Quick Reference
+
+### A. Superpowers (`superpowers`)
+- **Install**: `claude plugin install superpowers@claude-plugins-official`
+- **Key Commands**:
+  - `/superpowers:brainstorm` - Socratic inquiry & requirement clarification.
+  - `/superpowers:write-plan` - Granular 2–5 min atomic task planning.
+  - `/superpowers:test-driven` - Strict Red-Green-Refactor TDD workflow.
+  - `/superpowers:debug-systematic` - 4-phase root-cause debugging pipeline.
+  - `/superpowers:review` - Automated code review & severity grading.
+  - `/superpowers:help` - Show active skills and commands.
+- **Guide**: [SUPERPOWERS_PLUGIN.md](./SUPERPOWERS_PLUGIN.md)
+
+### B. Frontend Design (`frontend-design`)
+- **Install**: `claude plugin install frontend-design@claude-plugins-official`
+- **Capabilities**: Generates production-grade UI/UX code with distinctive typography, spatial depth, and bespoke aesthetic frameworks.
+- **Guide**: [FRONTEND_DESIGN_PLUGIN.md](./FRONTEND_DESIGN_PLUGIN.md)
+
